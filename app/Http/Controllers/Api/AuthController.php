@@ -36,7 +36,8 @@ class AuthController extends Controller
                     'error' => 'Hi, we could not find the user account you are trying to access'
                 ], 404);
             } else {
-                if(!Auth::attempt(['username' => $request->username, 'password' => $request->password])){
+                $credentials = $request->only('username', 'password');
+                if(!Auth::attempt($credentials)){
                     return response()->json([
                         'status' => false,
                         'error' => 'Hi, ensure you have entered correct login credentials'
@@ -53,7 +54,7 @@ class AuthController extends Controller
                         'token' => $token,
                         'type' => 'Bearer',
                         'profile' => $profile
-                        ]);
+                    ]);
                 }
             }
         }
@@ -77,14 +78,19 @@ class AuthController extends Controller
             if(!$user){
                 $model = new User();
 
-                $model->username = trim($request->username);
-                $model->cellphone = trim($request->cellphone);
+                $model->username = $request->username;
+                $model->cellphone = $request->cellphone;
                 $model->password = hash::make($request->password);
                 $model->save();
+
+                return response()->json([
+                    'status' => true,
+                    'error' => 'Hi, we have successfully registered your account please proceed to login to use the platform'
+                ], 200);
             } else {
                 return response()->json([
                     'status' => false,
-                    'error' => 'Hi, please ensure your form has been filled in correctly'
+                    'error' => 'Hi, it appears you already have an account with us'
                 ], 500);
             }
         }
