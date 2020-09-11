@@ -18,6 +18,7 @@ class Users extends Migration
             $table->string('username')->unique();
             $table->string('cellphone')->unique();
             $table->string('password');
+            $table->enum('role', ['user', 'moderator', 'company', 'admin'])->default('user');
             $table->timestamps();
         });
     }

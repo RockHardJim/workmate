@@ -19,7 +19,7 @@ class Profiles extends Migration
             $table->string('name');
             $table->string('surname');
             $table->enum('gender', ['male', 'female', 'other']);
-            $table->enum('path', ['information technology', 'education', 'health-care', 'botany', 'environmental', 'sports'])->default('unspecified');
+            $table->enum('path', ['information technology', 'education', 'health-care', 'botany', 'environmental', 'sports', 'unspecified'])->default('unspecified');
             $table->timestamps();
         });
     }
