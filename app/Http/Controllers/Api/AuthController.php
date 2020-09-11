@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -59,7 +60,34 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
+        $v = Validator::make($request->all(), [
+            'username' => 'required|min:3|max:30',
+            'cellphone' => 'required|min:10|max:10',
+            'password' => 'required|min:5|max:15'
+        ]);
 
+        if($v->fails()) {
+            return response()->json([
+                'status' => false,
+                'error' => 'Hi, please ensure your form has been filled in correctly'
+            ], 500);
+        } else {
+            $user = User::where('username', $request->username)->first();
+
+            if(!$user){
+                $model = new User();
+
+                $model->username = trim($request->username);
+                $model->cellphone = trim($request->cellphone);
+                $model->password = hash::make($request->password);
+                $model->save();
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'error' => 'Hi, please ensure your form has been filled in correctly'
+                ], 500);
+            }
+        }
     }
 
     public function logout(Request $request){
