@@ -18,32 +18,21 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request){
-        $v = Validator::make($request->all(),[
-           'username' => 'required|min:3|max:30',
-           'password' => 'required|min:5|max:15'
-        ]);
-
-        if($v->fails()) {
-            return response()->json([
-                'status' => false,
-                'error' => 'Hi, please ensure your form has been filled in correctly'
-            ], 404);
-        } else {
-            $user = User::where('username', $request->username)->first();
+            $user = User::where('username', $request->json()->get('username'))->first();
             if(!$user){
                 return response()->json([
                     'status' => false,
-                    'error' => 'Hi, we could not find the user account you are trying to access'
+                    'message' => 'Hi, we could not find the user account you are trying to access'
                 ], 404);
             } else {
-                if(!Auth::attempt(['username' => $request->username, 'password' => $request->password])){
+                if(!Auth::attempt(['username' => $request->json()->get('username'), 'password' => $request->json()->get('password')])){
                     return response()->json([
                         'status' => false,
-                        'error' => 'Hi, ensure you have entered correct login credentials'
+                        'message' => 'Hi, ensure you have entered correct login credentials'
                     ], 500);
                 } else {
                     $token = $user->createToken('authToken')->plainTextToken;
-                    $profile = Profile::where('user', $request->username)->first();
+                    $profile = Profile::where('user', $request->json()->get('username'))->first();
 
                     if(!$profile):
                         $profile = false;
@@ -53,42 +42,40 @@ class AuthController extends Controller
                         'token' => $token,
                         'type' => 'Bearer',
                         'profile' => $profile
-                        ]);
+                    ], 200);
                 }
             }
-        }
     }
 
     public function register(Request $request){
-        $v = Validator::make($request->all(), [
-            'username' => 'required|min:3|max:30',
-            'cellphone' => 'required|min:10|max:10',
-            'password' => 'required|min:5|max:15'
-        ]);
+            $user = User::where('username', $request->json()->get('username'))->first();
 
-        if($v->fails()) {
-            return response()->json([
-                'status' => false,
-                'error' => 'Hi, please ensure your form has been filled in correctly'
-            ], 500);
-        } else {
-            $user = User::where('username', $request->username)->first();
+            if(!$user) {
+                if (!User::where('cellphone', $request->json()->get('cellphone'))->first()) {
+                    $model = new User();
 
-            if(!$user){
-                $model = new User();
+                    $model->username = $request->json()->get('username');
+                    $model->cellphone = $request->json()->get('cellphone');
+                    $model->password = hash::make($request->json()->get('password'));
+                    $model->save();
 
-                $model->username = trim($request->username);
-                $model->cellphone = trim($request->cellphone);
-                $model->password = hash::make($request->password);
-                $model->save();
-            } else {
+                    return response()->json([
+                        'status' => true,
+                        'message' => 'Hi, we have successfully registered your account please proceed to login to use the platform'
+                    ], 200);
+                } else {
+                    return response()->json([
+                        'status' => false,
+                        'message' => 'Hi, it appears you already have an account with us'
+                    ], 500);
+                }
+            }else{
                 return response()->json([
                     'status' => false,
-                    'error' => 'Hi, please ensure your form has been filled in correctly'
+                    'message' => 'Hi, it appears you already have an account with us'
                 ], 500);
             }
         }
-    }
 
     public function logout(Request $request){
 
