@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/login', 'App\Http\Controllers\Api\AuthController@login');
+Route::post('/login', 'App\Http\Controllers\Api\AuthController@login')->name('login');
 Route::post('/register', 'App\Http\Controllers\Api\AuthController@register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth:sanctum']], static function(){
