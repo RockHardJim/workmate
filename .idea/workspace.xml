@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workmate.zip" beforeDir="false" afterPath="$PROJECT_DIR$/workmate.zip" afterDir="false" />
-    </list>
+    <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,6 +132,9 @@
       <path value="$PROJECT_DIR$/vendor/spatie/geocoder" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hMtDxMXGlORLIHX1gEjorbeeBU" />
@@ -302,12 +300,24 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2571" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599835772050" />
+    <state x="-1736" y="86" key="MergeDialog" timestamp="1599945136802">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1736" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945136802" />
+    <state x="-1322" y="281" key="MultipleFileMergeDialog" timestamp="1599945136809">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1322" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945136809" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599883462248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599837198852" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599862984823" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599883462248" />
+    <state x="-1143" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599945063799">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1143" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945063799" />
     <state x="773" y="250" key="ftp.server.browser" timestamp="1599867301174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
