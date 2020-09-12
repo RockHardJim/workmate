@@ -26,21 +26,21 @@ class AuthController extends Controller
         if($v->fails()) {
             return response()->json([
                 'status' => false,
-                'error' => 'Hi, please ensure your form has been filled in correctly'
+                'message' => 'Hi, please ensure your form has been filled in correctly'
             ], 404);
         } else {
             $user = User::where('username', $request->username)->first();
             if(!$user){
                 return response()->json([
                     'status' => false,
-                    'error' => 'Hi, we could not find the user account you are trying to access'
+                    'message' => 'Hi, we could not find the user account you are trying to access'
                 ], 404);
             } else {
                 $credentials = $request->only('username', 'password');
                 if(!Auth::attempt($credentials)){
                     return response()->json([
                         'status' => false,
-                        'error' => 'Hi, ensure you have entered correct login credentials'
+                        'message' => 'Hi, ensure you have entered correct login credentials'
                     ], 500);
                 } else {
                     $token = $user->createToken('authToken')->plainTextToken;
@@ -54,7 +54,7 @@ class AuthController extends Controller
                         'token' => $token,
                         'type' => 'Bearer',
                         'profile' => $profile
-                    ]);
+                    ], 200);
                 }
             }
         }
@@ -70,7 +70,7 @@ class AuthController extends Controller
         if($v->fails()) {
             return response()->json([
                 'status' => false,
-                'error' => 'Hi, please ensure your form has been filled in correctly'
+                'message' => 'Hi, please ensure your form has been filled in correctly'
             ], 500);
         } else {
             $user = User::where('username', $request->username)->first();
@@ -85,12 +85,12 @@ class AuthController extends Controller
 
                 return response()->json([
                     'status' => true,
-                    'error' => 'Hi, we have successfully registered your account please proceed to login to use the platform'
+                    'message' => 'Hi, we have successfully registered your account please proceed to login to use the platform'
                 ], 200);
             } else {
                 return response()->json([
                     'status' => false,
-                    'error' => 'Hi, it appears you already have an account with us'
+                    'message' => 'Hi, it appears you already have an account with us'
                 ], 500);
             }
         }

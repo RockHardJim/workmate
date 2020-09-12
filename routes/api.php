@@ -22,7 +22,8 @@ Route::post('/login', 'App\Http\Controllers\Api\AuthController@login');
 Route::post('/register', 'App\Http\Controllers\Api\AuthController@register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth:sanctum']], static function(){
-
+    Route::post('/location', 'App\Http\Controllers\Api\UserController@location');
+    Route::get('/location', 'App\Http\Controllers\Api\UserController@location');
 
 });
 

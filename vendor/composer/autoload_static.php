@@ -90,6 +90,7 @@ class ComposerStaticInit6a46fb879e48b1f9d17cd44f19cb5014
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Geocoder\\' => 16,
         ),
         'R' => 
         array (
@@ -315,6 +316,10 @@ class ComposerStaticInit6a46fb879e48b1f9d17cd44f19cb5014
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\Geocoder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/geocoder/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -522,6 +527,8 @@ class ComposerStaticInit6a46fb879e48b1f9d17cd44f19cb5014
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Api\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/AuthController.php',
+        'App\\Http\\Controllers\\Api\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -533,6 +540,9 @@ class ComposerStaticInit6a46fb879e48b1f9d17cd44f19cb5014
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Users\\Location' => __DIR__ . '/../..' . '/app/Models/Users/Location.php',
+        'App\\Models\\Users\\Profile' => __DIR__ . '/../..' . '/app/Models/Users/Profile.php',
+        'App\\Models\\Users\\User' => __DIR__ . '/../..' . '/app/Models/Users/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -4194,6 +4204,10 @@ class ComposerStaticInit6a46fb879e48b1f9d17cd44f19cb5014
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'Spatie\\Geocoder\\Exceptions\\CouldNotGeocode' => __DIR__ . '/..' . '/spatie/geocoder/src/Exceptions/CouldNotGeocode.php',
+        'Spatie\\Geocoder\\Facades\\Geocoder' => __DIR__ . '/..' . '/spatie/geocoder/src/Facades/Geocoder.php',
+        'Spatie\\Geocoder\\Geocoder' => __DIR__ . '/..' . '/spatie/geocoder/src/Geocoder.php',
+        'Spatie\\Geocoder\\GeocoderServiceProvider' => __DIR__ . '/..' . '/spatie/geocoder/src/GeocoderServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
