@@ -15,8 +15,9 @@ class Users extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('cellphone')->unique();
+            $table->string('username')->nullable();
+            $table->string('email')->nullable();
+            $table->string('cellphone')->nullable();
             $table->string('password');
             $table->enum('role', ['user', 'moderator', 'company', 'admin'])->default('user');
             $table->timestamps();
