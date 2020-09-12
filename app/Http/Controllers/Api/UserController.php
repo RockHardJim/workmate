@@ -8,6 +8,7 @@ use App\Models\Users\Profile;
 use Illuminate\Http\Request;
 use App\Models\Users\User;
 use Spatie\Geocoder\Geocoder;
+use App\Models\Users\Wallet;
 
 class UserController extends Controller
 {
@@ -98,4 +99,17 @@ class UserController extends Controller
             }
         }
     }
+
+    public function wallet(Request $request){
+        if ($request->isMethod('GET')) {
+            if(!Wallet::where('user', $request->user()->username)){
+                Wallet::create(['user' => $request->user()->username, 'bounty' => 0]);
+                return response()->json(['status' => true, 'message' => Wallet::where('user', $request->user()->username)->first()]);
+            }else{
+                return response()->json(['status' => true, 'message' => Wallet::where('user', $request->user()->username)->first()]);
+            }
+        }
+    }
+
+
 }
