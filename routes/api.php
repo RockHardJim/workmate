@@ -28,6 +28,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth:sanctum']], static func
     Route::post('/profile', 'App\Http\Controllers\Api\UserController@profile');
     Route::get('/profile', 'App\Http\Controllers\Api\UserController@profile');
 
+    Route::get('/wallet', 'App\Http\Controllers\Api\UserController@wallet');
+
 });
 
 Route::group(['prefix' => 'platform', 'middleware' => ['auth:sanctum']], static function(){
