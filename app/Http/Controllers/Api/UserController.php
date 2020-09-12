@@ -64,10 +64,8 @@ class UserController extends Controller
     }
 
     public function profile(Request $request){
-        $user = $request->user()->username;
-
         if ($request->isMethod('GET')) {
-            if(!Profile::where('username', $request->json()->get('username'))->first()){
+            if(!Profile::where('username', $request->user()->username)->first()){
                 return response()->json([
                     'status' => false,
                     'message' => 'Hi, it appears we cannot find your profile please create your profile'
@@ -75,12 +73,23 @@ class UserController extends Controller
             }else{
                 return response()->json([
                         'status' => true,
-                        'message' => Profile::where('user', $request->json()->get('username'))->first()
+                        'message' => Profile::where('user', $request->user()->username)->first()
                     ]);
             }
         } else {
-            if(!Profile::where('username', $request->json()->get('username'))->first()){
+            if(!Profile::where('username', $request->user()->username)->first()){
+                Profile::create([
+                    'user' => $request->user()->username,
+                    'name' => $request->json()->get('name'),
+                    'surname' => $request->json()->get('surname'),
+                    'gender' => $request->json()->get('gender'),
+                    'path' => $request->json()->get('path')
+                ]);
 
+                return response()->json([
+                    'status' => true,
+                    'message' => Profile::where('user', $request->user()->username)->first()
+                ]);
             } else {
                 return response()->json([
                     'status' => false,
