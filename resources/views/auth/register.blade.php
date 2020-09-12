@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <label for=""> Email address</label>
-        <input class="form-control @error('name') is-invalid @enderror" name="email" placeholder="Enter email" type="email">
+        <input class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter email" type="email">
 
         @error('email')
           <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for=""> Password</label>
-            <input class="form-control @error('name') is-invalid @enderror" name="password" placeholder="Password" type="password">
+            <input class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" type="password">
 
             @error('password')
               <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="">Confirm Password</label>
-            <input class="form-control @error('name') is-invalid @enderror" name="password_confirmation" placeholder="Password" type="password">
+            <input class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="Password" type="password">
 
             @error('password_confirmation')
               <span class="invalid-feedback" role="alert">
