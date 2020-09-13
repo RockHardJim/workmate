@@ -18,7 +18,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "livewire/livewire": "^2.2",
-        "spatie/geocoder": "^3.9"
+        "spatie/geocoder": "^3.9",
+        "toin0u/geotools-laravel": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

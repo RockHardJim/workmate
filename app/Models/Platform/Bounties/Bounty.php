@@ -13,7 +13,7 @@ class Bounty extends Model
     protected $fillable = ['company', 'name', 'value'];
 
 
-    public function profile(){
+    public function challenge(){
         return $this->hasMany(BountyChallenge::class, 'bounty');
     }
 }

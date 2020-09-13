@@ -116,6 +116,20 @@
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/cache/tag-interop" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/geocoder" />
+      <path value="$PROJECT_DIR$/vendor/cache/hierarchical-cache" />
+      <path value="$PROJECT_DIR$/vendor/cache/array-adapter" />
+      <path value="$PROJECT_DIR$/vendor/cache/adapter-common" />
+      <path value="$PROJECT_DIR$/vendor/toin0u/geotools-laravel" />
+      <path value="$PROJECT_DIR$/vendor/league/geotools" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
