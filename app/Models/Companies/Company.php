@@ -24,29 +24,39 @@ class Company extends Model
     ];
 
     /**
-     * Add user to company.
+     * Create new company
      *
-     * @param User $user
-     * @return boolean
+     * @param array $daya
+     * @return Company $company
      */
-    public function add(User $user)
+    public static function add(array $data)
     {
-        if (CompanyMember::where('user_id', $user->id)->where('company_id', $this->id)->exists()) {
-            return false;
-        }
+        $company = self::create($data);
 
-        $company = CompanyMember::create([
-            'user_id' => $user->id,
-            'company_id' => $this->id
+        CompanyBrand::create(['company_id' => $company->id]);
+
+        CompanyMember::create([
+            'user_id' => auth()->id(),
+            'company_id' => $company->id,
         ]);
 
-        return $company ? true : false;
+        return $company;
+    }
+
+    /**
+     * Company has brand details.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function brand()
+    {
+        return $this->hasOne(CompanyBrand::class);
     }
 
     /**
      * Company has many users
      *
-     * @param
+     * @param Illuminate\Database\Eloquent\Relations\HasManyThrough
      */
     public function members()
     {

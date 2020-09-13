@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <label for="">Email Address</label>
-        <input class="form-control @error('email') is-invalid @enderror" placeholder="Enter your email address" type="text">
+        <input name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter your email address" type="text">
 
         @error('email')
           <span class="invalid-feedback" role="alert">
@@ -26,7 +26,7 @@
       </div>
       <div class="form-group">
         <label for="">Password</label>
-        <input class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" type="password">
+        <input name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" type="password">
 
         @error('password')
           <span class="invalid-feedback" role="alert">

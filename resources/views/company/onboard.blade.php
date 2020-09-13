@@ -4,17 +4,17 @@
 <div class="all-wrapper menu-side with-pattern">
   <div class="auth-box-w">
     <div class="logo-w">
-      <a href="index.html"><img alt="" src="/img/undraw_Scrum_board_re_wk7v.svg" style="width: 165px;"></a>
+      <a href="#"><img alt="" src="/img/undraw_Scrum_board_re_wk7v.svg" style="width: 165px;"></a>
     </div>
     <h4 class="auth-header">
       Company Onboarding
     </h4>
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('company.create') }}">
       @csrf
 
       <div class="form-group">
         <label for="">Company Name</label>
-        <input name="company_name" class="form-control @error('company_name') is-invalid @enderror" placeholder="Enter your company name" type="text">
+        <input name="company_name" value="{{ old('company_name') }}" class="form-control @error('company_name') is-invalid @enderror" placeholder="Enter your company name" type="text">
 
         @error('company_name')
           <span class="invalid-feedback" role="alert">
@@ -27,10 +27,9 @@
       <div class="form-group">
         <label for="">Company Size</label>
         <select name="company_size" class="form-control @error('company_size') is-invalid @enderror">
-          <option>1 - 500</option>
-          <option>500 - 1000</option>
-          <option>1000 - 10000</option>
-          <option>10000+</option>
+          @foreach(config('sizes') as $size)
+            <option value="{{ $size }}" {{ old('company_size') == $size ? 'selected' : '' }}>{{ $size }}</option>
+          @endforeach
         </select>
 
         @error('company_size')
@@ -45,7 +44,7 @@
         <label for="">Industry</label>
         <select name="industry" class="form-control @error('industry') is-invalid @enderror">
           @foreach(config('industries') as $industry)
-            <option>{{ $industry }}</option>
+            <option value="{{ $industry }}" {{ old('industry') == $industry ? 'selected' : '' }}>{{ $industry }}</option>
           @endforeach
         </select>
 
@@ -59,7 +58,7 @@
 
       <div class="form-group">
         <label for="">Description</label>
-        <textarea name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter company description"></textarea>
+        <textarea name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter company description">{{ old('description') }}</textarea>
 
         @error('description')
           <span class="invalid-feedback" role="alert">
@@ -70,7 +69,7 @@
       </div>
 
       <div class="buttons-w">
-        <button class="btn btn-primary">Update</button>
+        <button class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
