@@ -13,6 +13,6 @@ class BountyTask extends Model
     protected $fillable = ['challenge', 'description', 'value', 'ends'];
 
     public function profile(){
-        return $this->belongsTo(BountyProfile::class);
+        return $this->belongsTo(BountyChallenge::class);
     }
 }

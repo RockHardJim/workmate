@@ -13,7 +13,7 @@ class BountyProfiles extends Migration
      */
     public function up()
     {
-        Schema::create('bounty_profiles', function (Blueprint $table) {
+        Schema::create('bounty_challenges', function (Blueprint $table) {
             $table->id();
             $table->string('bounty');
             $table->string('challenge')->unique();

@@ -14,6 +14,6 @@ class Bounty extends Model
 
 
     public function profile(){
-        return $this->hasMany(BountyProfile::class, 'bounty');
+        return $this->hasMany(BountyChallenge::class, 'bounty');
     }
 }

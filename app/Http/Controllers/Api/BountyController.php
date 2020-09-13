@@ -9,4 +9,12 @@ use Illuminate\Http\Request;
 class BountyController extends Controller
 {
     //
+
+    public function bounties(){
+
+    }
+
+    public function challenges($challenge){
+
+    }
 }

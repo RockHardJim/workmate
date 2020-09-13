@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Platform/Bounties/Bounty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Platform/Bounties/Bounty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountyProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountyChallenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountySubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountySubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountyTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Platform/Bounties/BountyTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_12_231330_bounty_profiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_12_231330_bounty_profiles.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1599961829266</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
+      <created>1599965004388</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1599965004388</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
+      <created>1599965009984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1599965009984</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +353,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="637" y="201" key="#Options/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599867226047" />
+    <state x="513" y="127" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599974905224">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="513" y="127" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599974905224" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599844913257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

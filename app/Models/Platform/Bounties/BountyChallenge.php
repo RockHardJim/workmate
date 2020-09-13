@@ -5,7 +5,7 @@ namespace App\Models\Platform\Bounties;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BountyProfile extends Model
+class BountyChallenge extends Model
 {
     use HasFactory;
 

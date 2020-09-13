@@ -13,6 +13,6 @@ class BountySubscription extends Model
     protected $fillable = ['challenge', 'user', 'status', 'subscribers'];
 
     public function profile(){
-        $this->belongsTo(BountyProfile::class);
+        $this->belongsTo(BountyChallenge::class);
     }
 }
