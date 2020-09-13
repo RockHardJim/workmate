@@ -55,7 +55,7 @@ class BountyController extends Controller
 
             $user_loc = (new \Toin0u\Geotools\Geotools)->coordinate([$user_location->latitude, $user_location->longitude]);
             $challenge_loc = (new \Toin0u\Geotools\Geotools)->coordinate([$lats["lat"], $lats["lng"]]);
-            $distance = (new \Toin0u\Geotools\Geotools)->distance()->setFrom($user_loc)->setTo($user_location);
+            $distance = (new \Toin0u\Geotools\Geotools)->distance()->setFrom($user_loc)->setTo($challenge_loc);
 
             if ($distance->in('km')->haversine() < 20) {
                 $data[] = $challenge;
