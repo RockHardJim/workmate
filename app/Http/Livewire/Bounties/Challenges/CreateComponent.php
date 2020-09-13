@@ -1,21 +1,13 @@
 <?php
 
-namespace App\Http\Livewire\Bounties;
+namespace App\Http\Livewire\Bounties\Challenges;
 
 use App\Models\Platform\Bounties\Bounty;
-use App\Models\Platform\Bounties\BountyChallenge;
 use Livewire\Component;
 
-class ShowBountyComponent extends Component
+class CreateComponent extends Component
 {
-    /**
-     * Bounty name.
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
+     /**
      * Challenge.
      *
      * @var string
@@ -43,6 +35,8 @@ class ShowBountyComponent extends Component
      */
     public $address;
 
+    public $name;
+
     /**
      * Bounty id.
      *
@@ -50,39 +44,43 @@ class ShowBountyComponent extends Component
      */
     public $bountyId;
 
+    public $encryptedId;
+
     /**
      * @inheritDoc
      */
-    public function mount(string $encryptedId)
+    public function mount($encryptedId)
     {
-        $bounty = Bounty::findOrFail(decrypt($encryptedId));
-
-        $this->name     = $bounty->name;
-        $this->bountyId = $bounty->id;
+        $this->bountyId = decrypt($encryptedId);
+        $this->encryptedId = $encryptedId;
+        $this->name = Bounty::find($this->bountyId)->name;
     }
 
     /**
-     * Create a new challenge.
+     * Create challenge.
      *
      * @return void
      */
     public function submit()
     {
-        info('', [
-            $this->challenge,
-            $this->path,
-            $this->address,
-            $this->description,
-        ]);
-
         $this->validate([
             'challenge' => 'required|string',
             'description' => 'required|string',
-            // 'path' => 'required|string|in_array:' . implode(',', config('paths', [])),
+            'path' => 'required|string|in:' . implode(',', config('paths', [])),
             'address' => 'required|string',
         ]);
 
-        
+        $bountyChallenge = BountyChallenge::create([
+            'bounty' => $this->bountyId,
+            'challenge' => $this->challenge,
+            'description' => $this->description,
+            'path' => $this->path,
+            'address' => $this->address,
+        ]);
+
+        return redirect()->route('bounties.view', [
+            'encryptedId' => encrypt($this->bountyId)
+        ]);
     }
 
     /**
@@ -90,9 +88,9 @@ class ShowBountyComponent extends Component
      */
     public function render()
     {
-        return view('livewire.bounties.show-bounty-component', [
+        return view('livewire.bounties.challenges.create-component', [
             'company_name' => auth()->user()->company()->name,
-            'challenges' => BountyChallenge::where('bounty', $this->bountyId)->latest()->paginate(10),
+            'encryptedId' => encrypt($this->bountyId),
         ])->extends('layouts.app')->slot('content');
     }
 }
