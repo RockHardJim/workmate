@@ -14,10 +14,10 @@ class BountyTasks extends Migration
      */
     public function up()
     {
-        $limit = Carbon::now();
-        $limit->addDays(2);
+        Schema::create('bounty_tasks', function (Blueprint $table) {
+            $limit = Carbon::now();
+            $limit->addDays(2);
 
-        Schema::create('bounty_tasks', function (Blueprint $table, $limit) {
             $table->id();
             $table->string('challenge');
             $table->string('description');
