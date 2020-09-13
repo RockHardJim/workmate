@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_12_231330_bounty_profiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_12_231330_bounty_profiles.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1599975816662</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
+      <created>1599983766353</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1599983766353</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
+      <created>1599996587979</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1599996587979</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,12 +393,13 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1322" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945136809" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599975820013">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599996590778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599837198852" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945157302" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599975820013" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599996590778" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599964361686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

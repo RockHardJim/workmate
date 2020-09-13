@@ -17,7 +17,6 @@ class BountyProfiles extends Migration
             $table->id();
             $table->string('bounty');
             $table->string('challenge')->unique();
-            $table->string('task')->comment('This is the name of the task e.g -> Help Kids Study Better');
             $table->longText('description');
             $table->enum('path', ['information technology', 'education', 'health-care', 'botany', 'environmental', 'sports', 'unspecified'])->default('unspecified');
             $table->integer('value')->default(0);
