@@ -29,9 +29,13 @@
     <link href="/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
     <link href="/bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
     <link href="/css/main.css?version=4.5.0" rel="stylesheet">
-</head>
 
-<body class="menu-position-side menu-side-left full-screen with-content-panel">
+    @livewireStyles
+
+    <script src="https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.min.js" defer></script>
+</head>
+{{-- full-screen with-content-panel --}}
+<body class="menu-position-side menu-side-left full-screen">
     <div class="all-wrapper solid-bg-all">
         <div class="layout-w">
             <!--------------------
@@ -55,7 +59,7 @@
                 <div class="menu-and-user">
                     <div class="logged-user-w">
                         <div class="avatar-w" style="border: unset;">
-                            <img alt="" src="/img/brand/1/download.png">
+                            <img alt="" src="{{ auth()->user()->company()->brand->logo_url }}">
                         </div>
                     </div>
                     <!--------------------
@@ -63,7 +67,7 @@
               -------------------->
                     <ul class="main-menu">
                         <li class="">
-                            <a href="/">
+                            <a href="/dashboard">
                                 <div class="icon-w">
                                     <div class="os-icon os-icon-layout"></div>
                                 </div>
@@ -92,7 +96,7 @@
                 <div class="logged-user-w avatar-inline">
                     <div class="logged-user-i">
                         <div class="avatar-w" style="border: unset;">
-                            <img alt="" src="/img/brand/1/download.png">
+                            <img alt="" src="{{ auth()->user()->company()->brand->logo_url }}">
                         </div>
                         <div class="logged-user-info-w">
                             <div class="logged-user-name">
@@ -108,12 +112,14 @@
                         <div class="logged-user-menu color-style-bright">
                             <ul>
                                 <li>
-                                    <a href="/company/invite"><i
-                                            class="os-icon os-icon-user"></i><span>Invite</span></a>
+                                    <a href="/company/invite">
+                                        <i class="os-icon os-icon-user"></i><span>Invite</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="/company/settings"><i
-                                            class="os-icon os-icon-settings"></i><span>Settings</span></a>
+                                    <a href="/company/settings">
+                                        <i class="os-icon os-icon-settings"></i><span>Settings</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -126,12 +132,42 @@
                     <li class="sub-header">
                         <span>Manage</span>
                     </li>
-                    <li class="selected">
+                    <li class="">
                         <a href="/dashboard">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layout"></div>
                             </div>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="selected has-sub-menu">
+                        <a href="/bounties">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-layout"></div>
+                            </div>
+                            <span>Bounties</span>
+                        </a>
+                        <div class="sub-menu-w">
+                            <div class="sub-menu-header">
+                                Bounties
+                            </div>
+                            <div class="sub-menu-icon">
+                                <i class="os-icon os-icon-layout"></i>
+                            </div>
+                            <div class="sub-menu-i">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="/bounties/create">Create</a>
+                                    </li>
+                                    <li>
+                                        <a href="/bounties/active">Active</a>
+                                    </li>
+                                    <li>
+                                        <a href="/bounties/all">All</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         </a>
                     </li>
                 </ul>
@@ -201,28 +237,10 @@
                 <!--------------------
             END - Top Bar
             -------------------->
+                @yield('content')
                 <!--------------------
             START - Breadcrumbs
             -------------------->
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="index.html">Products</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <span>Laptop with retina screen</span>
-                    </li>
-                </ul>
-                <!--------------------
-            END - Breadcrumbs
-            -------------------->
-                <div class="content-i">
-                    <div class="content-box">
-
-                    </div>
-                </div>
             </div>
         </div>
         <div class="display-type"></div>
@@ -257,6 +275,8 @@
     <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
     <script src="/js/demo_customizer.js?version=4.5.0"></script>
     <script src="/js/main.js?version=4.5.0"></script>
+
+    @livewireScripts
 </body>
 
 </html>

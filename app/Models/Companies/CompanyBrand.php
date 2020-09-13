@@ -23,6 +23,15 @@ class CompanyBrand extends Model
     ];
 
     /**
+     * The attributes that should be appended.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'logo_url'
+    ];
+
+    /**
      * Brand details belongs to a company.
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -30,5 +39,15 @@ class CompanyBrand extends Model
     public function company()
     {
         $this->belongsTo(Company::class);
+    }
+
+    /**
+     * Get logo url.
+     *
+     * @return string
+     */
+    public function getLogoUrlAttribute()
+    {
+        return "/asset/" . (encrypt($this->logo ?? ''));
     }
 }
