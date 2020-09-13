@@ -10,8 +10,18 @@ class SettingsComponent extends Component
 {
     use WithFileUploads;
 
+    /**
+     * Input field.
+     *
+     * @var string
+     */
     public $brand;
 
+    /**
+     * Logo url.
+     *
+     * @var string
+     */
     public $brandImage;
 
     /**

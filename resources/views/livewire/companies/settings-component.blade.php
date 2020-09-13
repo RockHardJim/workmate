@@ -12,7 +12,7 @@
     </ul>
     
     <div class="content-i">
-        <div class="content-box">
+        <div class="content-box" data-turbolinks="false">
             <div class="col-md-6" style="margin: auto">
                 <div class="element-wrapper" style="margin-bottom: 100px;">
                     <h6 class="element-header">

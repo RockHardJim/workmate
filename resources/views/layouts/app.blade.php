@@ -143,7 +143,7 @@
                     <li class="selected has-sub-menu">
                         <a href="/bounties">
                             <div class="icon-w">
-                                <div class="os-icon os-icon-layout"></div>
+                                <div class="os-icon os-icon-list"></div>
                             </div>
                             <span>Bounties</span>
                         </a>

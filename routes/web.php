@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth', 'onboarded']], function () {
         Route::get('/', App\Http\Livewire\Bounties\AllComponent::class);
         Route::get('/active', App\Http\Livewire\Bounties\ActiveComponent::class);
         Route::get('/create', App\Http\Livewire\Bounties\CreateComponent::class);
+        Route::get('/show/{encryptedId}', App\Http\Livewire\Bounties\ShowBountyComponent::class)->name('bounties.view');
 
     });
 

@@ -1,10 +1,10 @@
 <div>
     <ul class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/">{{ $name }}</a>
+            <a href="/">{{ $company_name }}</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/bounties">Bounty</a>
+            <a href="/bounties">All Bounties</a>
         </li>
         <li class="breadcrumb-item">
             <span>Create Bounty</span>
@@ -12,7 +12,7 @@
     </ul>
     
     <div class="content-i">
-        <div class="content-box">
+        <div class="content-box" data-turbolinks="false">
             <div class="col-md-6" style="margin: auto">
                 <div class="element-wrapper" style="margin-bottom: 100px;">
                     <h6 class="element-header">
@@ -30,7 +30,7 @@
     
                             <div class="form-group">
                                 <label>Name</label>
-                                <input name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter bounty name" type="text">
+                                <input name="name" wire:model="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter bounty name" type="text">
     
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
