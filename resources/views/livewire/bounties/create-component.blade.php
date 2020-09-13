@@ -1,4 +1,4 @@
-<div>
+<div wire:ignore>
     <ul class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="/">{{ $company_name }}</a>

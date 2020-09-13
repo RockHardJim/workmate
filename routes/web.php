@@ -43,6 +43,9 @@ Route::group(['middleware' => ['auth', 'onboarded']], function () {
         Route::get('/create', App\Http\Livewire\Bounties\CreateComponent::class);
         Route::get('/show/{encryptedId}', App\Http\Livewire\Bounties\ShowBountyComponent::class)->name('bounties.view');
 
+        Route::get('/{encryptedId}/challenges/create', App\Http\Livewire\Bounties\Challenges\CreateComponent::class)->name('bounties.challenges.create');
+        Route::get('/{encryptedId}/challenges/show/{encryptedChallengeId}', App\Http\Livewire\Bounties\Challenges\CreateComponent::class)->name('bounties.challenges.view');
+
     });
 
     Route::group(['prefix' => '/company'], function () {

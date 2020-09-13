@@ -48,6 +48,6 @@ class CompanyBrand extends Model
      */
     public function getLogoUrlAttribute()
     {
-        return "/asset/" . (encrypt($this->logo ?? ''));
+        return $this->logo ? "/asset/" . (encrypt($this->logo ?? '')) : null;
     }
 }

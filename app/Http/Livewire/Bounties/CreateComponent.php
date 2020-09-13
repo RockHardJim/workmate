@@ -29,6 +29,8 @@ class CreateComponent extends Component
             'value' => 100,
         ]);
 
+        $this->name = '';
+
         return redirect()->route('bounties.view', [
             'encryptedId' => encrypt($bounty->id)
         ]);

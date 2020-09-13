@@ -1,4 +1,4 @@
-<div>
+<div wire:ignore>
     <ul class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="#">Company</a>
@@ -19,13 +19,19 @@
                         Update information
                     </h6>
                     <div class="element-box">
-                        <form wire:submit.prevent="submit">
+                        <form wire:submit.prevent="submit" wire:ignore>
                             <h5 class="form-header">
                                 Company Information
                             </h5>
     
                             <div class="form-desc">
                                 Discharge best employed your phase each the of shine. Be met even reason consider logbook redesigns. Never a turned interfaces among asking
+
+                                @if (\Session::has('response'))
+                                    <div class="alert alert-success">
+                                        {{ \Session::get('response') }}
+                                    </div>
+                                @endif
                             </div>
     
                             <div class="row" style="margin-bottom: 10px;">

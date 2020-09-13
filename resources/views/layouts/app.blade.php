@@ -31,8 +31,6 @@
     <link href="/css/main.css?version=4.5.0" rel="stylesheet">
 
     @livewireStyles
-
-    <script src="https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.min.js" defer></script>
 </head>
 {{-- full-screen with-content-panel --}}
 <body class="menu-position-side menu-side-left full-screen">
@@ -86,7 +84,7 @@
             <div
                 class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
                 <div class="logo-w">
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="/">
                         <div class="logo-element"></div>
                         <div class="logo-label">
                             Work Mate

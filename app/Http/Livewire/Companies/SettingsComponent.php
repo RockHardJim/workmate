@@ -40,6 +40,8 @@ class SettingsComponent extends Component
         auth()->user()->company()->brand()->update([
             'logo' => $image
         ]);
+
+        return session('response', 'Successfully updated company profile');
     }
 
     /**

@@ -9,8 +9,7 @@ class BountyChallenge extends Model
 {
     use HasFactory;
 
-    protected $table = 'bounty_profiles';
-    protected $fillable = ['bounty', 'challenge', 'task', 'description', 'path', 'bounty', 'address'];
+    protected $fillable = ['bounty', 'challenge', 'description', 'path', 'address'];
 
     public function bounty(){
         return $this->belongsTo(Bounty::class);
