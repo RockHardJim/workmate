@@ -24,7 +24,7 @@ class BountyController extends Controller
         }
     }
 
-    public function challenges($bounty){
+    public function challenges(Request $request, $bounty){
 
     }
 

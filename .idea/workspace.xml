@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties">
+    <list default="true" id="5362c7a0-88d3-40ed-ad6f-bdd469c8de8f" name="Default Changelist" comment="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties&#10;Added API controller for the bounties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BountyController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -351,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599997011758</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties&#10;Added API controller for the bounties">
+      <created>1600000900730</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1600000900730</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +373,8 @@
     <MESSAGE value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done" />
     <MESSAGE value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile" />
     <MESSAGE value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties" />
+    <MESSAGE value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties&#10;Added API controller for the bounties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Laravel Sanctum for API authentication&#10;Added model relationship&#10;Added fillables to the location model&#10;Finished Api Login Function&#10;Started Registration Function&#10;Auth Api done&#10;Added User Controller for location and profile&#10;Added migration files for bounties&#10;Added API controller for the bounties" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1599867304342">
@@ -400,13 +409,13 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1322" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945136809" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599997015740">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600002152169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599837198852" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599945157302" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599975820013" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599997015740" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600002152169" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599997239999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

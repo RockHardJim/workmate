@@ -39,6 +39,7 @@ class AuthController extends Controller
                     endif;
 
                     return response()->json([
+                        'status' => $status = ($profile === false ? false : true),
                         'token' => $token,
                         'type' => 'Bearer',
                         'profile' => $profile
