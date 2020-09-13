@@ -20,4 +20,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth', 'onboarded']], function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::group(['prefix' => '/company'], function () {
+
+        Route::get('/welcome', [CompanyController::class, 'welcome'])->name('company.welcome');
+        Route::get('/join', [CompanyController::class, 'join'])->name('company.join');
+        Route::get('/onboard', [CompanyController::class, 'onboard'])->name('company.onboard');
+
+        Route::post('/create', [CompanyController::class, 'create'])->name('company.create');
+
+    });
+
+});
