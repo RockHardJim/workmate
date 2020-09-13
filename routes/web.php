@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Middleware\AssetIsPrivate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,4 +36,20 @@ Route::group(['middleware' => ['auth', 'onboarded']], function () {
 
     });
 
+    Route::group(['prefix' => '/bounties'], function () {
+
+        Route::get('/', App\Http\Livewire\Bounties\AllComponent::class);
+        Route::get('/active', App\Http\Livewire\Bounties\ActiveComponent::class);
+        Route::get('/create', App\Http\Livewire\Bounties\CreateComponent::class);
+
+    });
+
+    Route::group(['prefix' => '/company'], function () {
+
+        Route::get('/settings', App\Http\Livewire\Companies\SettingsComponent::class);
+        Route::post('/settings', App\Http\Livewire\Companies\SettingsComponent::class);
+
+    });
+
+    Route::get('/asset/{encryptedPath}', [AssetController::class, 'stream'])->middleware(AssetIsPrivate::class)->name('asset.stream');
 });
