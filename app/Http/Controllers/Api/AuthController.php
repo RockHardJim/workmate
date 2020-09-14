@@ -7,7 +7,7 @@ use App\Models\Users\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use App\Models\User;
+use App\Models\Users\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller

@@ -31,11 +31,11 @@ class BountyController extends Controller
         }
     }
 
-    public function challenges(Request $request, $bounty)
+    public function challenges(Request $request)
     {
         $data = array();
 
-        $challenges = Bounty::find($bounty)->profile;
+        $challenges = Bounty::find($request->json()->get('bounty'))->profile;
         $user_location = Location::where('user', $request->user()->username);
 
         if ($challenges) {
@@ -73,8 +73,12 @@ class BountyController extends Controller
         }
     }
 
-    public function tasks($task){
+    public function tasks(Request $request){
 
+    }
+
+    public function subscribe(Request $request){
+        
     }
 
 }
